@@ -1,0 +1,81 @@
+//  0  1  2  3  4       5  6  7  8  9
+// 10 11 12 13 14      15 16 17 18 19
+// 20 21 22 23 24      25 26 27 28 29
+//          30 31      32 33
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        //----LEFT----//
+        cmb_bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <1 2>;
+            timeout-ms = <75>;
+            layers = <DEF NAV>;
+        };
+
+        cmb_del {
+            bindings = <&kp DELETE>;
+            key-positions = <2 3>;
+            timeout-ms = <75>;
+            layers = <DEF NAV>;
+        };
+
+        cmb_cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <20 21>;
+            layers = <DEF>;
+        };
+
+        cmb_copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <21 22>;
+            layers = <DEF>;
+        };
+
+        cmb_paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <22 23>;
+            layers = <DEF>;
+        };
+
+        cmb_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <23 24>;
+            layers = <DEF>;
+        };
+
+
+        //---RIGHT---//
+        cmb_caps {
+            bindings = <&caps_word>;
+            key-positions = <26 28>;
+            layers = <DEF>;
+        };
+
+        cmb_lang {
+            bindings = <&kp SCROLLLOCK>;
+            key-positions = <6 8>;
+            layers = <DEF>;
+        };
+
+        cmb_shcha {
+            bindings = <&kp RA(U)>;
+            key-positions = <7 8>;
+            layers = <DEF>;
+        };
+
+        cmb_ha {
+            bindings = <&kp SQT>;
+            key-positions = <18 19>;
+            layers = <DEF>;
+        };
+
+        cmb_e {
+            bindings = <&kp LBKT>;
+            key-positions = <8 9>;
+            layers = <DEF>;
+        };
+    };
+};
