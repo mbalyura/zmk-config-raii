@@ -1,0 +1,22 @@
+if SHIELD_RAII_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "raii"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+config ZMK_USB
+	default y
+
+endif
+
+if SHIELD_RAII_LEFT || SHIELD_RAII_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
+
+config ZMK_BLE
+	default y
