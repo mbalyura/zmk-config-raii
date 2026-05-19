@@ -1,19 +1,80 @@
-if SHIELD_RAII_LEFT
+if SHIELD_RAII_DONGLE || SHIELD_RAII_DONGLE_DISPLAY || SHIELD_RAII_LEFT_CENTRAL
 
-config ZMK_KEYBOARD_NAME
-	default "raii"
+config ZMK_SPLIT
+	default y
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
+config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 config ZMK_USB
 	default y
 
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+	default y
+
+config ZMK_STUDIO
+	default y
+
 endif
 
-if SHIELD_RAII_LEFT || SHIELD_RAII_RIGHT
+if SHIELD_RAII_DONGLE || SHIELD_RAII_DONGLE_DISPLAY
+
+config ZMK_KEYBOARD_NAME
+	default "RAII Dongle"
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+	default 2
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+	default y
+
+config ZMK_SLEEP
+	default n
+
+config BT_MAX_CONN
+	default 5
+
+config BT_MAX_PAIRED
+	default 5
+
+endif
+
+if SHIELD_RAII_DONGLE
+
+config BT_BAS
+	default n
+
+endif
+
+if SHIELD_RAII_DONGLE_DISPLAY
+
+config BT_BAS
+	default n
+
+endif
+
+if SHIELD_RAII_LEFT_CENTRAL
+
+config ZMK_KEYBOARD_NAME
+	default "RAII"
+
+config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+	default y
+
+endif
+
+if SHIELD_RAII_LEFT_PERIPHERAL || SHIELD_RAII_RIGHT_PERIPHERAL
 
 config ZMK_SPLIT
+	default y
+
+config ZMK_BATTERY
+	default y
+
+config ZMK_BATTERY_REPORTING
+	default y
+
+config BT_BAS
 	default y
 
 endif
